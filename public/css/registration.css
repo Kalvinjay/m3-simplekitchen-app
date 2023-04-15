@@ -1,0 +1,17 @@
+#Reg-to-subscribe {
+  float: right;
+  width: 40%;
+  margin-top: 8.5%;
+}
+#Reg-to-subscribe .name-email-input {
+  height: 25px;
+}
+#Reg-to-subscribe #formregbtn {
+  border: none;
+  background-color: rgb(218, 170, 14);
+  width: 315px;
+  color: white;
+  height: 35px;
+}
+
+/*# sourceMappingURL=registration.css.map */

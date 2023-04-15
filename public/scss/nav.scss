@@ -1,0 +1,30 @@
+/* Nesting */
+/* SCSS */
+
+nav {
+    font: {
+        size: 1em;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+    ul {
+        list-style-type: none;
+        .homeblog-btn {
+            float: left;
+            margin: 0 5px 0 0;
+            color: $color4;
+            .homeblog {
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+               }
+               color: $color4;
+           }
+       }
+       .register-btn {
+        float: right;
+        color: $color4;
+        text-decoration: none;
+       }
+   }
+}
