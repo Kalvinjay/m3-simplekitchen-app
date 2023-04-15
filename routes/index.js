@@ -12,17 +12,18 @@ const basic = auth.basic({
 
 router.get('/', (req, res) => {
   //res.send('It works!');
-  res.render('index', { title: 'Home Page' });
-});
-router.get('/form', (req, res) => {
-  //res.send('It works!');
-  res.render('form', { title: 'Form Page' });
+  res.render('home', { title: 'Home Page' });
 });
 
-router.get('/registrations', basic.check((req, res) => {
+router.get('/register', (req, res) => {
+  //res.send('It works!');
+  res.render('form', { title: 'Registration form' });
+});
+
+router.get('/registrants', basic.check((req, res) => {
   Registration.find()
     .then((registrations) => {
-      res.render('index', { title: 'Listing registrations', registrations });
+      res.render('registrants', { title: 'Listing registrations', registrations });
     })
     .catch(() => { 
       res.send('Sorry! Something went wrong.'); 
@@ -44,7 +45,7 @@ router.post('/',
         if (errors.isEmpty()) {
           const registration = new Registration(req.body);
           registration.save()
-            .then(() => {res.send('Thank you for your registration!');})
+            .then(() => {res.render('thankyou', { title: 'Thank you for Registration' });})
             .catch((err) => {
               console.log(err);
               res.send('Sorry! Something went wrong.');
